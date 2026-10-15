@@ -31,6 +31,23 @@ def test_engagement_strategy_command_prints_sections(capsys, monkeypatch) -> Non
     assert "6) Review cycle" in output
 
 
+def test_eschatology_discussion_command_prints_monthly_global_guide(
+    capsys, monkeypatch
+) -> None:
+    monkeypatch.setattr(
+        sys, "argv", ["panorafus-ai", "eschatology-discussion"]
+    )
+
+    exit_code = cli.main()
+    output = capsys.readouterr().out
+
+    assert exit_code == 0
+    assert "Monthly Biblical Eschatology Discussion" in output
+    assert "Africa, Asia, Europe, North America, South America, and Oceania" in output
+    assert "Christians do not agree on" in output
+    assert "without assigning one view to a continent" in output
+
+
 def test_no_command_prints_help(capsys, monkeypatch) -> None:
     monkeypatch.setattr(sys, "argv", ["panorafus-ai"])
 
