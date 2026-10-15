@@ -34,6 +34,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     abraham_parser.set_defaults(command="abraham")
 
+    eschatology_parser = subparsers.add_parser(
+        "eschatology-discussion",
+        help="Show a monthly, global biblical eschatology discussion guide",
+    )
+    eschatology_parser.set_defaults(command="eschatology-discussion")
+
     layout_parser = subparsers.add_parser(
         "creator-redeemer-layout",
         help="Show a publish-ready Creator and Redeemer layout page",
@@ -140,6 +146,29 @@ def print_creator_redeemer_layout() -> None:
     )
 
 
+def print_eschatology_discussion() -> None:
+    print("Monthly Biblical Eschatology Discussion")
+    print("A scripture-centered conversation across the six inhabited continents:")
+    print("Africa, Asia, Europe, North America, South America, and Oceania.")
+    print("")
+    print("Monthly focus")
+    print("   Explore Christian hope in Christ's return, resurrection, judgment,")
+    print("   the kingdom of God, and the renewal of creation.")
+    print("")
+    print("Discussion approach")
+    print("   - Read biblical passages in context and distinguish text from interpretation.")
+    print("   - Listen respectfully to local churches and diverse Christian traditions.")
+    print("   - Compare major views, including premillennial, amillennial, and")
+    print("     postmillennial interpretations, without assigning one view to a continent.")
+    print("   - Treat disputed conclusions with humility; Christians do not agree on")
+    print("     every detail or chronology of eschatology.")
+    print("")
+    print("Suggested monthly rhythm")
+    print("   1) Read selected passages and share observations.")
+    print("   2) Discuss interpretations, questions, and cultural perspectives.")
+    print("   3) Summarize shared convictions, open questions, and next month's reading.")
+
+
 def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
@@ -156,6 +185,10 @@ def main() -> int:
 
     if args.command == "abraham":
         print_abraham()
+        return 0
+
+    if args.command == "eschatology-discussion":
+        print_eschatology_discussion()
         return 0
 
     if args.command == "creator-redeemer-layout":
