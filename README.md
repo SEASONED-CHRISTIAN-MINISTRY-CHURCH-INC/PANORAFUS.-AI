@@ -95,6 +95,12 @@ To learn about Abraham, the Father of Faith:
 panorafus-ai abraham
 ```
 
+To show a monthly, global biblical eschatology discussion guide:
+
+```bash
+panorafus-ai eschatology-discussion
+```
+
 To print a publish-ready Creator and Redeemer layout page:
 
 ```bash
