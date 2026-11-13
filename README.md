@@ -101,6 +101,12 @@ To show a monthly, global biblical eschatology discussion guide:
 panorafus-ai eschatology-discussion
 ```
 
+To discuss the seventh dispensation in Christian dispensationalism:
+
+```bash
+panorafus-ai seventh-dispensation
+```
+
 To print a publish-ready Creator and Redeemer layout page:
 
 ```bash
