@@ -40,6 +40,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     eschatology_parser.set_defaults(command="eschatology-discussion")
 
+    dispensationalism_parser = subparsers.add_parser(
+        "seventh-dispensation",
+        help="Discuss the seventh dispensation in Christian dispensationalism",
+    )
+    dispensationalism_parser.set_defaults(command="seventh-dispensation")
+
     layout_parser = subparsers.add_parser(
         "creator-redeemer-layout",
         help="Show a publish-ready Creator and Redeemer layout page",
@@ -169,6 +175,34 @@ def print_eschatology_discussion() -> None:
     print("   3) Summarize shared convictions, open questions, and next month's reading.")
 
 
+def print_seventh_dispensation() -> None:
+    print("The Seventh Dispensation: The Kingdom")
+    print("A Christian discussion guide to dispensational interpretations of")
+    print("the promised reign of Christ and the renewal of creation.")
+    print("")
+    print("Overview")
+    print("   In many seven-dispensation frameworks, the seventh dispensation is")
+    print("   called the Kingdom or Millennium. It is commonly associated with")
+    print("   Christ's reign, the fulfillment of God's promises, and the final")
+    print("   resolution of evil. Christians differ on how these passages relate")
+    print("   to the millennium and the new creation.")
+    print("")
+    print("Suggested passages")
+    print("   - Isaiah 11:1-9")
+    print("   - Revelation 20:1-10")
+    print("   - Revelation 21:1-5")
+    print("")
+    print("Discussion questions")
+    print("   1) What hopes and promises do these passages describe?")
+    print("   2) How do premillennial, amillennial, and postmillennial readings")
+    print("      understand the kingdom and Revelation 20?")
+    print("   3) What do Christians share in common about Christ's victory and")
+    print("      God's renewal of creation, despite differences in chronology?")
+    print("")
+    print("Read each passage in context, distinguish Scripture from interpretation,")
+    print("and discuss differing views with humility and respect.")
+
+
 def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
@@ -189,6 +223,10 @@ def main() -> int:
 
     if args.command == "eschatology-discussion":
         print_eschatology_discussion()
+        return 0
+
+    if args.command == "seventh-dispensation":
+        print_seventh_dispensation()
         return 0
 
     if args.command == "creator-redeemer-layout":

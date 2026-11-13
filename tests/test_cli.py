@@ -48,6 +48,23 @@ def test_eschatology_discussion_command_prints_monthly_global_guide(
     assert "without assigning one view to a continent" in output
 
 
+def test_seventh_dispensation_command_prints_respectful_discussion_guide(
+    capsys, monkeypatch
+) -> None:
+    monkeypatch.setattr(
+        sys, "argv", ["panorafus-ai", "seventh-dispensation"]
+    )
+
+    exit_code = cli.main()
+    output = capsys.readouterr().out
+
+    assert exit_code == 0
+    assert "The Seventh Dispensation: The Kingdom" in output
+    assert "Revelation 20:1-10" in output
+    assert "premillennial, amillennial, and postmillennial" in output
+    assert "discuss differing views with humility and respect" in output
+
+
 def test_no_command_prints_help(capsys, monkeypatch) -> None:
     monkeypatch.setattr(sys, "argv", ["panorafus-ai"])
 
